@@ -1,19 +1,19 @@
-import { ADD_USER, USERS_LIST } from '../actions/actionTypes';
+import * as types from '../constants/ActionTypes';
 
-const usersReducer = (state = [], action) => {
+const users = (state = [], action) => {
   switch (action.type) {
-    case ADD_USER:
+    case types.ADD_USER:
       return state.concat([
         {
          name: action.name,
          id: action.id
         }
       ])
-    case USERS_LIST:
+    case types.USERS_LIST:
       return action.user
     default:
       return state
   }
 }
 
-export default usersReducer;
+export default users;

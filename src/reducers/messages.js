@@ -1,9 +1,9 @@
-import { ADD_MESSAGE, MESSAGE_RECEIVED } from '../actions/actionTypes';
+import * as types from '../constants/ActionTypes';
 
-const messagesReducer = (state = [], action) => {
+const messages = (state = [], action) => {
   switch (action.type) {
-    case ADD_MESSAGE:
-    case MESSAGE_RECEIVED:
+    case types.ADD_MESSAGE:
+    case types.MESSAGE_RECEIVED:
       return state.concat([
         {
           message: action.message,
@@ -16,4 +16,4 @@ const messagesReducer = (state = [], action) => {
   }
 }
 
-export default messagesReducer;
+export default messages;
